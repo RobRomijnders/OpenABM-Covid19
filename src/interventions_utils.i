@@ -98,6 +98,7 @@ PyObject * get_contacts(model * model)
                                         PyList_SetItem(it, 3, PyInt_FromLong(inter->type));
                                         PyList_Append(out, it);
                                         inter = inter->next;
+                                        Py_DECREF(it);
                                 }
                         }
                 }
@@ -130,6 +131,7 @@ PyObject * get_contacts_daily(model * model, int day)
                                 PyList_SetItem(it, 3, PyInt_FromLong(inter->type));
                                 PyList_Append(out, it);
                                 inter = inter->next;
+                                Py_DECREF(it);
                         }
                 }
         }
